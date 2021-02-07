@@ -29,7 +29,7 @@ export = (app: Application, config: Config) => {
 
     app.post("/add", async (req, res) => {
         const id = req.body.id || generate_string(config.id.length, config.id.capital, config.id.lower, config.id.numbers)
-        const link = req.body.link
+        let link = req.body.link as string
         const folder = req.body.folder || "all"
         const verify = req.body.verify
 
@@ -41,11 +41,23 @@ export = (app: Application, config: Config) => {
             return error(res, "Link was not provided.")
         }
 
+        if (!link.startsWith("http://") && !link.startsWith("https://")) {
+            link = `http${config.forcehttps ? "s" : ""}://${link}`
+        }
+        
+        link = link.replace("www.", "")
+
+        try {
+            new URL(link)
+        } catch (_) {
+            return error(res, "Invalid link.")  
+        }
+
         const short: Short = {
             id: folder as string + "-" + id as string, 
             sid: id,
             folder: folder as string,
-            link: link as string, 
+            link: link, 
             usage: 0,
             createdat: Date.now()
         }

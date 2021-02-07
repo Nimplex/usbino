@@ -16,6 +16,7 @@ export interface Config {
         lower: boolean,
         numbers: boolean
     }
+    forcehttps: boolean
 }
 
 export interface Short {
