@@ -1,0 +1,29 @@
+{
+  "name": "usbino",
+  "version": "1.0.0",
+  "description": "\"# usbino\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badosz0/usbino.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badosz0/usbino/issues"
+  },
+  "homepage": "https://github.com/badosz0/usbino#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/ejs": "^3.0.5",
+    "@types/express": "^4.17.11",
+    "@types/rethinkdb": "^2.3.16",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "rethinkdb": "^2.4.2"
+  }
+}
