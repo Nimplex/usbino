@@ -16,8 +16,6 @@ export = (app: Application, config: Config) => {
 
         const short = await get_short(id)
 
-        console.log(short)
-
         if (!short) {
             res
                 .status(404)

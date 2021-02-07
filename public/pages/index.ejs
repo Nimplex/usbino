@@ -32,11 +32,11 @@
                     <th>Usage</th>
                     <th></th>
                 </tr>
-                <% for (const short of shorts) { %>
+                <% for (const short of shorts) { const [folder, sid] = short.id.split("-") %>
                 <tr>
                     <td>
-                        <a href="<%= (short.folder == 'all' ? '/' : `/${short.folder}/`) + short.sid%>">
-                            <%= (short.folder == 'all' ? '/' : `/${short.folder}/`) + short.sid %>
+                        <a href="<%= (folder == 'all' ? '/' : `/${folder}/`) + sid %>">
+                            <%= (folder == 'all' ? '/' : `/${folder}/`) + sid  %>
                         </a>
                     </td>
                     <td><%= new Date(short.createdat).toLocaleDateString() %></td>

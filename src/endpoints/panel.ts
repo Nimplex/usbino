@@ -54,8 +54,6 @@ export = (app: Application, config: Config) => {
 
         const short: Short = {
             id: folder as string + "-" + id as string, 
-            sid: id,
-            folder: folder as string,
             link: link, 
             usage: 0,
             createdat: Date.now()
