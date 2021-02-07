@@ -7,6 +7,7 @@ import { generate_string } from "../utils/string"
 import create_short from "../database/create_short"
 import get_short from "../database/get_short"
 import remove_short from "../database/remove_short"
+import { log } from "../utils/logger"
 
 function error(res: Response, message: string): Response {
     return res
@@ -50,6 +51,7 @@ export = (app: Application, config: Config) => {
         }
 
         await create_short(short)
+        log("info", `Created short: ${short.id}`)
 
         return res
             .status(200)
@@ -64,13 +66,14 @@ export = (app: Application, config: Config) => {
             return error(res, "Invalid verify ID.")
         }
         
-        const short = get_short(id)
+        const short = await get_short(id)
 
         if (!short) {
             return error(res, "Short does not exist.")
         }
 
         await remove_short(id)
+        log("info", `Removed short: ${short.id}`)
 
         return res
             .status(200)
