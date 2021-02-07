@@ -1,1 +1,114 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+html {
+  overflow: scroll;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #5F5F5F;
+  background-color: #FFFFFF;
+  font-family: 'Poppins';
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 5% 20%;
+}
+
+.container .new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .new .linkinput {
+  width: 100%;
+  padding: 10px 10px;
+  border: 2px solid #F2F2F2;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+.container .new .linkinput:focus {
+  outline: none;
+  border: 2px solid #5F5F5F;
+}
+
+.container .new .idinput {
+  width: 10%;
+  margin-left: 20px;
+  padding: 10px 10px;
+  border: 2px solid #F2F2F2;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+.container .new .idinput:focus {
+  outline: none;
+  border: 2px solid #5F5F5F;
+}
+
+.container .new .folderinput {
+  width: 20%;
+  margin-left: 20px;
+  padding: 10px 10px;
+  border: 2px solid #F2F2F2;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+.container .new .folderinput:focus {
+  outline: none;
+  border: 2px solid #5F5F5F;
+}
+
+.container .new .add {
+  margin-left: 20px;
+  line-height: 40px;
+  padding: 0px 15px;
+  background-color: #5F5F5F;
+  color: #F2F2F2;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container .new .add:hover {
+  background-color: #464646;
+  color: #d9d9d9;
+}
+
+.container .shorts {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.container .shorts tr th {
+  text-align: left;
+  font-weight: 500;
+}
+/*# sourceMappingURL=main.css.map */

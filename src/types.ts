@@ -10,4 +10,18 @@ export interface Config {
         db: string
     }
     admin: string
+    id: {
+        length: number,
+        capital: boolean,
+        lower: boolean,
+        numbers: boolean
+    }
+}
+
+export interface Short {
+    id: string, 
+    link: string, 
+    folder?: string,
+    usage: number,
+    createdat: number
 }

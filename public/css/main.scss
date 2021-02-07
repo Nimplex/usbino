@@ -1,0 +1,96 @@
+$white: #FFFFFF;
+$concrete: #F2F2F2;
+$scorpion: #5F5F5F;
+
+@mixin input {
+    padding: 10px 10px;
+    border: 2px solid $concrete;
+    background-color: $concrete;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+
+    &:focus {
+        outline: none; 
+        border: 2px solid $scorpion;
+    }
+}
+
+html {
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: $scorpion;
+    background-color: $white;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 5% 20%;
+    
+    .new {
+        display: flex;
+        justify-content: center;
+
+        .linkinput {
+            width: 100%;
+            @include input;
+        }
+    
+        .idinput {
+            width: 10%;
+            margin-left: 20px;
+            @include input;
+        }
+    
+        .folderinput {
+            width: 20%;
+            margin-left: 20px;
+            @include input;
+        }
+    
+        .add {
+            margin-left: 20px;
+            line-height: 40px;
+            padding: 0px 15px;
+            background-color: $scorpion;
+            color: $concrete;
+            border-radius: 4px;
+            transition: 0.3s;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            
+            &:hover {
+                background-color: darken($scorpion, 10%);
+                color: darken($concrete, 10%);
+            }
+        }
+    }
+    
+    .shorts {
+        margin-top: 100px;
+        width: 100%;
+
+        tr {
+            th {
+                text-align: left;
+                font-weight: 500;
+            }
+        }
+    }
+}

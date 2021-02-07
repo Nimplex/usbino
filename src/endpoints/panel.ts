@@ -1,16 +1,60 @@
-import { Application } from "express"
-import { Config } from "../types"
+import { Application, Response } from "express"
+import { Config, Short } from "../types"
 import path from "path"
-import get_links from "../database/get_links"
+import get_shorts from "../database/get_shorts"
+import { UID } from ".."
+import { generate_string } from "../utils/string"
+import create_short from "../database/create_short"
+
+function error(res: Response, message: string): Response {
+    return res
+        .status(400)
+        .json({error: message})
+}
+
 
 export = (app: Application, config: Config) => {
     app.get("/panel", async (req, res) => {
-        const links = await get_links()
+        const shorts = await get_shorts()
         
         return res
             .status(200)
             .render(path.join("../public/pages/index.ejs"), {
-                links
+                shorts, UID
             })
+    })
+
+    app.post("/add", async (req, res) => {
+        const id = req.body.id || generate_string(config.id.length, config.id.capital, config.id.lower, config.id.numbers)
+        const link = req.body.link
+        const folder = req.body.folder
+        const verify = req.body.verify
+
+        if (verify != UID) {
+            console.log(verify, UID)
+            return error(res, "Invalid verify ID.")
+        }
+
+        if (!link) {
+            console.log(link)
+            return error(res, "Link was not provided.")
+        }
+
+        const short: Short = {
+            id: id as string, 
+            link: link as string, 
+            usage: 0,
+            createdat: Date.now()
+        }
+
+        if (folder) {
+            short.folder = folder as string
+        }
+
+        await create_short(short)
+
+        return res
+            .status(200)
+            .json(short)
     })
 }

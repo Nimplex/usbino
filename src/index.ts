@@ -3,6 +3,9 @@ import body_parser from "body-parser"
 import { renderFile } from "ejs"
 import { log } from "./utils/logger"
 import { connect } from "./database"
+import { generate_string } from "./utils/string"
+
+export const UID = generate_string(8, true, true, true)
 
 const config = require(process.argv.includes("dev") ? "../config-dev.json" : "../config.json")
 const app = express()

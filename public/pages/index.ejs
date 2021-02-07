@@ -1,1 +1,41 @@
-hello world
+<!DOCTYPE html>
+<html lang="en" dir="ltr" translate="no">
+    <head>
+        <title>URL shortener</title>
+        <link rel="stylesheet" type="text/css" href="/public/css/main.css" async>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="URL shortener">
+        <meta property="og:description" content="URL shortener" >
+        <meta name="google" content="notranslate" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+        <script src="/public/js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="/public/js/api.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="new">
+                <input class="linkinput" type="text" id="linkinput" name="linkinput" placeholder="Link">
+                <input class="idinput" type="text" id="idinput" name="idnput" placeholder="ID">
+                <input class="folderinput" type="text" id="folderinput" name="foldernput" placeholder="Folder">
+                <span class="add" onclick="add('<%= UID %>')">
+                    Add
+                </span>
+            </div>
+            <table class="shorts">
+                <tr>
+                    <th>ID</th>
+                    <th>Created At</th>
+                    <th>Link</th>
+                    <th>Usage</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>1203213921839021839012839012890</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
