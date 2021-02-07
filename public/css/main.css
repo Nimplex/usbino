@@ -114,6 +114,11 @@ a {
   font-weight: 500;
   margin: 0px;
   border-bottom: 2px solid #5F5F5F;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .container .shorts tr td {

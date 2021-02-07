@@ -95,6 +95,12 @@ a {
                 margin: 0px;
 
                 border-bottom: 2px solid $scorpion;
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: pointer
             }
 
             td {

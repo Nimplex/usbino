@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
         <script src="/public/js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="/public/js/api.js" crossorigin="anonymous"></script>
+        <script src="/public/js/sorting.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
@@ -24,12 +25,13 @@
                     Add
                 </span>
             </div>
-            <table class="shorts">
+            <table class="shorts" id="shorts">
                 <tr>
-                    <th>Path</th>
-                    <th>Created At</th>
-                    <th>Link</th>
-                    <th>Usage</th>
+                    <th onclick="sort(0)">Path</th>
+                    <th onclick="sort(2)">Created At</th>
+                    <th style="display:none;">Date</th>
+                    <th onclick="sort(3)">Link</th>
+                    <th onclick="sort(4)">Usage</th>
                     <th></th>
                 </tr>
                 <% for (const short of shorts) { const [folder, sid] = short.id.split("-") %>
@@ -40,6 +42,7 @@
                         </a>
                     </td>
                     <td><%= new Date(short.createdat).toLocaleDateString() %></td>
+                    <td style="display:none;"><%= short.createdat %></td>
                     <td>
                         <a href="<%= short.link %>">
                             <%= short.link %>
