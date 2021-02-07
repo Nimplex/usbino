@@ -37,14 +37,14 @@
                 <% for (const short of shorts) { const [folder, sid] = short.id.split("-") %>
                 <tr>
                     <td>
-                        <a href="<%= (folder == 'all' ? '/' : `/${folder}/`) + sid %>">
+                        <a target="_blank" href="<%= (folder == 'all' ? '/' : `/${folder}/`) + sid %>">
                             <%= (folder == 'all' ? '/' : `/${folder}/`) + sid  %>
                         </a>
                     </td>
                     <td><%= new Date(short.createdat).toLocaleDateString() %></td>
                     <td class="hide"><%= short.createdat %></td>
                     <td class="link">
-                        <a href="<%= short.link %>">
+                        <a target="_blank" href="<%= short.link %>">
                             <%= short.link %>
                         </a>
                     </td>
