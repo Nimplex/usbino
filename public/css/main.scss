@@ -106,11 +106,51 @@ a {
             td {
                 font-weight: 500;
                 padding-top: 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 150px;
+
+                &.link {
+                    padding-right: 30px;
+                }
             }
 
             .remove {
                 text-align: center;
                 cursor: pointer;
+            }
+        }
+
+        .hide {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        margin: 5% 10%;
+
+        .new {
+            .idinput {
+                width: 20%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 5% 5%;
+
+        .new {
+            .linkinput {
+                width: 20%;
+            }
+
+            .idinput {
+                width: 20%;
             }
         }
     }

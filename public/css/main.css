@@ -124,10 +124,43 @@ a {
 .container .shorts tr td {
   font-weight: 500;
   padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.container .shorts tr td.link {
+  padding-right: 30px;
 }
 
 .container .shorts tr .remove {
   text-align: center;
   cursor: pointer;
+}
+
+.container .shorts .hide {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 5% 10%;
+  }
+  .container .new .idinput {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 5% 5%;
+  }
+  .container .new .linkinput {
+    width: 20%;
+  }
+  .container .new .idinput {
+    width: 20%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
