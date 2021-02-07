@@ -17,6 +17,7 @@ export interface Config {
         numbers: boolean
     }
     forcehttps: boolean
+    logs: boolean
 }
 
 export interface Short {

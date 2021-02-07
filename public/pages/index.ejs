@@ -40,7 +40,11 @@
                         </a>
                     </td>
                     <td><%= new Date(short.createdat).toLocaleDateString() %></td>
-                    <td><%= short.link %></td>
+                    <td>
+                        <a href="<%= short.link %>">
+                            <%= short.link %>
+                        </a>
+                    </td>
                     <td><%= short.usage %></td>
                     <td class="remove" onclick="remove('<%= UID %>', '<%= short.id %>')">X</td>
                 </tr>

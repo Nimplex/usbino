@@ -19,8 +19,8 @@ require("./endpoints/panel")(app, config)
 // require("./endpoints/link")(app, config)
 // require("./endpoints/home")(app, config)
 
-app.listen(config.port, () =>
-    log("info", `Website started. (${config.port})`)
-)
+app.listen(config.port, () => {
+    if (config.logs) log("info", `Website started. (${config.port})`)
+})
 
 connect(config)
