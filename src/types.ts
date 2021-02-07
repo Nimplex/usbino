@@ -18,6 +18,9 @@ export interface Config {
     }
     forcehttps: boolean
     logs: boolean
+    panel: string
+    redirect: string
+    notfound: string
 }
 
 export interface Short {

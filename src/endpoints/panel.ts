@@ -15,9 +15,8 @@ function error(res: Response, message: string): Response {
         .json({error: message})
 }
 
-
 export = (app: Application, config: Config) => {
-    app.get("/panel", async (req, res) => {
+    app.get(`/${config.panel}`, async (req, res) => {
         const shorts = await get_shorts()
         
         return res

@@ -16,8 +16,7 @@ app.engine("html", renderFile)
 app.set("view engine", "ejs")
 
 require("./endpoints/panel")(app, config)
-// require("./endpoints/link")(app, config)
-// require("./endpoints/home")(app, config)
+require("./endpoints/short")(app, config)
 
 app.listen(config.port, () => {
     if (config.logs) log("info", `Website started. (${config.port})`)
