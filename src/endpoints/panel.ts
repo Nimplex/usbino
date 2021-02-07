@@ -5,6 +5,8 @@ import get_shorts from "../database/get_shorts"
 import { UID } from ".."
 import { generate_string } from "../utils/string"
 import create_short from "../database/create_short"
+import get_short from "../database/get_short"
+import remove_short from "../database/remove_short"
 
 function error(res: Response, message: string): Response {
     return res
@@ -27,31 +29,48 @@ export = (app: Application, config: Config) => {
     app.post("/add", async (req, res) => {
         const id = req.body.id || generate_string(config.id.length, config.id.capital, config.id.lower, config.id.numbers)
         const link = req.body.link
-        const folder = req.body.folder
+        const folder = req.body.folder || "all"
         const verify = req.body.verify
 
         if (verify != UID) {
-            console.log(verify, UID)
             return error(res, "Invalid verify ID.")
         }
 
         if (!link) {
-            console.log(link)
             return error(res, "Link was not provided.")
         }
 
         const short: Short = {
-            id: id as string, 
+            id: folder as string + "-" + id as string, 
+            sid: id,
+            folder: folder as string,
             link: link as string, 
             usage: 0,
             createdat: Date.now()
         }
 
-        if (folder) {
-            short.folder = folder as string
+        await create_short(short)
+
+        return res
+            .status(200)
+            .json(short)
+    })
+
+    app.post("/remove", async (req, res) => {
+        const verify = req.body.verify
+        const id = req.body.id as string || ""
+        
+        if (verify != UID) {
+            return error(res, "Invalid verify ID.")
+        }
+        
+        const short = get_short(id)
+
+        if (!short) {
+            return error(res, "Short does not exist.")
         }
 
-        await create_short(short)
+        await remove_short(id)
 
         return res
             .status(200)

@@ -32,9 +32,15 @@
                     <th>Usage</th>
                     <th></th>
                 </tr>
+                <% for (const short of shorts) { %>
                 <tr>
-                    <td>1203213921839021839012839012890</td>
+                    <td><%= short.folder ? "/" : "/"%><%= short.sid %></td>
+                    <td><%= new Date(short.createdat).toLocaleDateString() %></td>
+                    <td><%= short.link %></td>
+                    <td><%= short.usage %></td>
+                    <td class="remove" onclick="remove('<%= UID %>', '<%= short.id %>')">X</td>
                 </tr>
+                <% } %>
             </table>
         </div>
     </body>

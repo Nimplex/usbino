@@ -85,11 +85,25 @@ a {
     .shorts {
         margin-top: 100px;
         width: 100%;
+        border: 0px;
 
         tr {
             th {
                 text-align: left;
                 font-weight: 500;
+                margin: 0px;
+
+                border-bottom: 2px solid $scorpion;
+            }
+
+            td {
+                font-weight: 500;
+                padding-top: 10px;
+            }
+
+            .remove {
+                text-align: center;
+                cursor: pointer;
             }
         }
     }

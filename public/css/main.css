@@ -105,10 +105,23 @@ a {
 .container .shorts {
   margin-top: 100px;
   width: 100%;
+  border: 0px;
 }
 
 .container .shorts tr th {
   text-align: left;
   font-weight: 500;
+  margin: 0px;
+  border-bottom: 2px solid #5F5F5F;
+}
+
+.container .shorts tr td {
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.container .shorts tr .remove {
+  text-align: center;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

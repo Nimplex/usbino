@@ -20,6 +20,7 @@ export interface Config {
 
 export interface Short {
     id: string, 
+    sid: string,
     link: string, 
     folder?: string,
     usage: number,
