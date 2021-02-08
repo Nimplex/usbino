@@ -17,6 +17,7 @@
         <script src="/public/js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="/public/js/api.js" crossorigin="anonymous"></script>
         <script src="/public/js/sorting.js" crossorigin="anonymous"></script>
+        <script src="/public/js/copy.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
@@ -36,6 +37,7 @@
                     <th onclick="sort(3)">Link</th>
                     <th onclick="sort(4)">Usage</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 <% for (const short of shorts) { const [folder, sid] = short.id.split("-") %>
                 <tr>
@@ -52,6 +54,7 @@
                         </a>
                     </td>
                     <td><%= short.usage %></td>
+                    <td class="copy" onclick="copy('<%= (folder == `all` ? `` : `${folder}/`) + sid  %>')">C</td>
                     <td class="remove" onclick="remove('<%= UID %>', '<%= short.id %>')">X</td>
                 </tr>
                 <% } %>

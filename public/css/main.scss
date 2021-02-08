@@ -114,11 +114,16 @@ a {
                 &.link {
                     padding-right: 30px;
                 }
-            }
 
-            .remove {
-                text-align: center;
-                cursor: pointer;
+                &.remove {
+                    text-align: center;
+                    cursor: pointer;
+                }
+    
+                &.copy {
+                    text-align: center;
+                    cursor: pointer;
+                }
             }
         }
 

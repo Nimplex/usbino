@@ -134,7 +134,12 @@ a {
   padding-right: 30px;
 }
 
-.container .shorts tr .remove {
+.container .shorts tr td.remove {
+  text-align: center;
+  cursor: pointer;
+}
+
+.container .shorts tr td.copy {
   text-align: center;
   cursor: pointer;
 }
