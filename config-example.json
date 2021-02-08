@@ -1,0 +1,20 @@
+{
+    "port": 1600,
+    "database": {
+        "host": "localhost",
+        "port": 28015,
+        "user": "admin",
+        "db": "usbino"
+    },
+    "id": {
+        "length": 4,
+        "capital": true,
+        "lower": true,
+        "numbers": true
+    },
+    "forcehttps": true,
+    "logs": true,
+    "panel": "panel",
+    "redirect": "https://github.com/badosz0/usbino",
+    "notfound": "¯\\_(ツ)_/¯"
+}
