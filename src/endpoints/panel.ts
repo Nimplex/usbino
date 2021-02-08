@@ -59,6 +59,12 @@ export = (app: Application, config: Config) => {
             createdat: Date.now()
         }
 
+        const exists = await get_short(short.id)
+
+        if (exists) {
+            return error(res, "Short already exists.")
+        }
+
         await create_short(short)
         log("info", `Created short: ${short.id}`)
 
