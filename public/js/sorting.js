@@ -1,5 +1,5 @@
 // https://www.w3schools.com/howto/howto_js_sort_table.asp
-function sort(n) {
+function sort(n, numbers = false) {
     let table, rows, switching, i, x, y, should_switch, dir, switch_count = 0
     
     table = document.getElementById("shorts")
@@ -17,12 +17,12 @@ function sort(n) {
             y = rows[i + 1].getElementsByTagName("TD")[n]
             
             if (dir == "asc") {
-                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                if ((numbers ? parseInt(x.innerHTML.toLowerCase()) : x.innerHTML.toLowerCase()) > (numbers ? parseInt(y.innerHTML.toLowerCase()) : y.innerHTML.toLowerCase())) {
                     should_switch = true
                     break
                 }
             } else if (dir == "desc") {    
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                if ((numbers ? parseInt(x.innerHTML.toLowerCase()) : x.innerHTML.toLowerCase()) < (numbers ? parseInt(y.innerHTML.toLowerCase()) : y.innerHTML.toLowerCase())) {
                     should_switch = true
                     break
                 }
