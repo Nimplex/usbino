@@ -1,4 +1,4 @@
-# Usbino
+# Usbino (original project by Badosz0)
 **U**RL **s**hortener, **b**ecause **I** **n**eeded **o**ne.
 <img src="assets/screenshot.png" alt="Screenshot">
 
